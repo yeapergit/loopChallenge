@@ -4,11 +4,9 @@ namespace CurrencyConverterClient;
 
 public static class Program
 {
-    public static async Task Main()
+    public static void Main()
     {
-        using var httpClient = new HttpClient();
-        
-        var currencyConverterApi = new CurrencyConverterApi(httpClient);
+        var currencyConverterApi = new CurrencyConverterApi();
 
         var currencyConverterClient = new Application.CurrencyConverterClient(currencyConverterApi);
         

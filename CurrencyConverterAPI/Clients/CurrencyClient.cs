@@ -25,13 +25,14 @@ public class CurrencyClient : ICurrencyClient
             if (response.IsSuccessStatusCode)
             {
                 _logger.LogInformation("Got successful response from Amdoren API");
-                var content = await response.Content.ReadAsStringAsync();
-                var currency = JsonConvert.DeserializeObject<Currency>(content);
+                var currency = await response.Content.ReadFromJsonAsync<Currency>();
             
                 if (currency != null)
                 {   
                     return currency;
                 }
+
+                _logger.LogWarning("Currency object was null");
 
                 return new Currency
                 {
