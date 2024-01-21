@@ -10,6 +10,7 @@ To make an API more secure we could add some type of authentication, for example
 In terms of scalability we can use something like Kubernetes (AKS for Azure) because it can create new pods based on the load of API. 
 We can also use a load-balancer to share the load from the multiple pods of the Service. 
 It is also important to make Performance Tests to make sure what kind of traffic/load our API can handle.
+Resilience in general, not only the scalability part, is a key factor. We should have logs, monitoring and error handling when something fails.
 
 
 ## Follow us through the steps you would take to construct a pipeline for this API, ensuring a smooth and automated deployment process. Consider aspects such as version control integration, automated testing, and deployment to Azure resources.
